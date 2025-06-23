@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white;
+}
+
+body * {
+    @apply border-gray-200 dark:border-gray-700;
+}
+
+footer * {
+    @apply text-gray-400 dark:text-gray-500;
+}
+
+.hover-highlight:hover {
+    @apply bg-gray-200 dark:bg-gray-700;
+}
