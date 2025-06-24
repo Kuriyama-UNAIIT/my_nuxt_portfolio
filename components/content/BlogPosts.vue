@@ -25,14 +25,16 @@ const props = defineProps({
   }
 })
 
-const { data: posts } = await useAsyncData(() => {
+const { data: allPosts } = await useAsyncData(() => {
   return queryCollection('content')
     .select('path', 'title', 'date')
     .where('path', 'LIKE', '/blog/%')
     .order('date', 'DESC')
-    .limit(props.limit)
     .all()
 })
+
+const posts = allPosts.value.slice(0, props.limit || allPosts.length)
+
 </script>
 
 <style scoped>

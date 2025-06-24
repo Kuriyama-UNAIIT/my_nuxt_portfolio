@@ -16,7 +16,7 @@ Nuxt.jsを使ってポートフォリオサイトを作成しています。
 
 ## 新着ブログ
 
-::LatestBlogPosts{limit=3}
+::LatestBlogPosts{:limit=3}
 ::
 
 …
